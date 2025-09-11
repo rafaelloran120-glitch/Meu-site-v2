@@ -1,61 +1,68 @@
-/* Reset para não deixar espaços padrão */
-html, body {
-  height: 100%;
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilo do corpo */
+/* Corpo da página */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   line-height: 1.6;
   color: #ffffff;
 
   /* 🌌 Fundo da galáxia */
-  background: url("https://upload.wikimedia.org/wikipedia/commons/c/cb/ESO_-_Milky_Way.jpg") no-repeat center center fixed;
+  background: url("https://cdn.spacetelescope.org/archives/images/screen/heic1509a.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Cabeçalho principal */
-h1 {
+/* Cabeçalho */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
   text-align: center;
-  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
   font-size: 2.5rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Navegação */
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffcc00;
 }
 
 /* Seções */
 section {
-  background: rgba(0, 0, 0, 0.6); /* caixa semitransparente para leitura */
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 800px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-/* Títulos das seções */
-section h2 {
+/* Títulos */
+h2 {
   margin-bottom: 15px;
   font-size: 1.8rem;
-  color: #ffcc00;
-  text-align: center;
-}
-
-/* Lista */
-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-section ul li {
-  margin: 10px 0;
-  padding-left: 20px;
-  position: relative;
-}
-
-section ul li::before {
-  content: "✨";
-  position: absolute;
-  left: 0;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 5px;
 }
