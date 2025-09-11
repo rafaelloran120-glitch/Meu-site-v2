@@ -1,56 +1,8 @@
-/* Fundo do site */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  background: black;
   color: white;
-  background: url("https://wallpapers.com/images/hd/4k-space-galaxy-stars-9byr27t5a8q7g3f1.jpg") no-repeat center center fixed;
-  background-size: cover;
-  line-height: 1.6;
 }
 
-/* Navbar fixa no topo */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 15px 0;
-  text-align: center;
-  z-index: 1000;
-}
-
-/* Links do menu */
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 20px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #00ffff;
-}
-
-/* Espaço do conteúdo pra não ficar escondido atrás da navbar */
-section {
-  padding: 80px 20px;
-  margin-top: 80px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Títulos */
-h1, h2 {
-  text-align: center;
-}
-
-/* Lista com emoji ✨ */
-ul {
-  list-style-type: "✨ ";
-  padding-left: 20px;
+h1 {
+  color: yellow;
 }
