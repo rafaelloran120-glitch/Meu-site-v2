@@ -1,58 +1,55 @@
-/* Fundo do site */
+/* Fundo geral do site */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: white;
-  background: url("https://wallpapers.com/images/hd/4k-space-galaxy-stars-9byr27t5a8q7g3f1.jpg") no-repeat center center fixed;
+  background: url("https://www.solarsystemscope.com/textures/download/2k_stars.jpg") no-repeat center center fixed;
   background-size: cover;
+  color: #f1f1f1;
   line-height: 1.6;
 }
 
-/* Navbar fixa no topo */
+/* Navegação no topo */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: static; /* não vai mais acompanhar */
   width: 100%;
-  background: rgba(0, 0, 30, 0.8); /* tom azul escuro translúcido */
+  background: rgba(0, 0, 0, 0.8);
   padding: 15px 0;
   text-align: center;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* Links do menu */
 nav a {
   color: #fff;
+  margin: 0 15px;
   text-decoration: none;
-  margin: 0 20px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #00ffff;
 }
 
-/* Seções com fundo levemente escuro */
+/* Seções */
 section {
-  padding: 120px 20px 80px; /* espaço em cima p/ não colar na navbar */
-  margin: 40px auto;
   max-width: 800px;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 /* Títulos */
 h1, h2 {
   text-align: center;
   color: #fff;
-  text-shadow: 0 0 10px #00ffff;
 }
 
-/* Listas com brilho ✨ */
+/* Ajustar listas */
 ul {
-  list-style-type: "✨ ";
   padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
 }
