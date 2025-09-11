@@ -1,16 +1,15 @@
-//esse vai ser pra rolar suave pae
-const links = document.querySelectorAll("nav a"); // corrigido: querySelectorAll
-const nav = document.querySelector("nav");        // corrigido: pegando o nav inteiro
-const navHeight = nav.offsetHeight;
+// Scroll suave quando clicar no menu
+const links = document.querySelectorAll("nav a");
 
-links.forEach(link => {                           // corrigido: forEach minúsculo
+links.forEach(link => {
   link.addEventListener("click", event => {
     event.preventDefault();
+
     const targetId = link.getAttribute("href");
     const targetSection = document.querySelector(targetId);
-    const targetPosition = targetSection.offsetTop - navHeight;
+
     window.scrollTo({
-      top: targetPosition,
+      top: targetSection.offsetTop - 20, // margem do topo
       behavior: "smooth"
     });
   });
