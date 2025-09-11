@@ -1,79 +1,107 @@
-/* RESET */
+/* CSS Profissional com fundo NASA público */
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* FUNDO GALÁXIA */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg") no-repeat center center fixed;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/0/0f/Andromeda_galaxy_2.jpg") no-repeat center center fixed;
   background-size: cover;
-  color: #f5f5f5;
-  line-height: 1.8;
+  background-attachment: scroll; /* evita bug de zoom estranho em mobile */
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 40px 0;
 }
 
-/* CABEÇALHO PRINCIPAL */
+/* overlay pra escurecer um pouco e deixar contraste melhor */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* container para todo conteúdo */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* título principal */
 h1 {
   text-align: center;
   font-size: 3rem;
-  margin: 60px 20px 30px;
-  color: #ffffff;
-  text-shadow: 0px 0px 20px rgba(0,0,0,0.9);
-  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: #ffd54f;
+  text-shadow: 0px 0px 20px rgba(0,0,0,0.8);
 }
 
-/* SUBTEXTO */
-p {
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto 50px;
-  font-size: 1.2rem;
-  color: #dcdcdc;
+/* nav estilo top simples */
+nav {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:12px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-/* SEÇÕES */
-section {
-  background: rgba(0, 0, 0, 0.78);
-  border-radius: 18px;
-  padding: 45px 35px;
-  margin: 70px auto;
-  max-width: 950px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight:600;
+  padding:8px 14px;
+  border-radius:8px;
+  transition: background 0.3s, transform 0.2s;
 }
 
-section:hover {
-  transform: scale(1.015);
-  box-shadow: 0 16px 50px rgba(0,0,0,0.85);
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-3px);
 }
 
-/* TÍTULOS DAS SEÇÕES */
-h2 {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #ffd369;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0px 0px 12px rgba(0,0,0,0.7);
+/* cartões das seções */
+section.card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* LISTAS */
+section.card h2 {
+  color: #ffd54f;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:2rem;
+}
+
+/* listas sem bolinhas */
 ul {
   list-style: none;
   padding: 0;
 }
 
 ul li {
-  margin: 18px 0;
-  padding: 14px 20px;
+  margin: 15px 0;
+  padding: 12px 18px;
   background: rgba(255,255,255,0.05);
-  border-left: 5px solid #ffd369;
-  border-radius: 10px;
+  border-left: 5px solid #ffd54f;
+  border-radius: 8px;
   color: #f1f1f1;
-  font-size: 1.05rem;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
