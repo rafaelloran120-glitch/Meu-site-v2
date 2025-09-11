@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa") no-repeat center center;
+  background: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564") no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
   line-height: 1.6;
@@ -29,16 +29,36 @@ nav a:hover {
 
 /* Seções */
 section {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   margin: 30px auto;
   padding: 25px;
   border-radius: 12px;
   max-width: 900px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 /* Títulos */
 h1, h2 {
   text-align: center;
+  color: #ffcc00;
+}
+
+/* Tirando os pontos da lista */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  padding-left: 15px;
+  position: relative;
+}
+
+/* Colocando um traço discreto no lugar da bolinha */
+ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
   color: #ffcc00;
 }
