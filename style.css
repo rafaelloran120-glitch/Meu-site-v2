@@ -1,75 +1,58 @@
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* Fundo do site */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  color: #fff;
-  background: url("https://cdn.pixabay.com/photo/2018/09/20/20/41/milky-way-3695560_1280.jpg") no-repeat center center fixed;
+  background: url("https://cdn.pixabay.com/photo/2011/12/14/12/11/earth-11127_1280.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
-  line-height: 1.6;
+  color: #fff;
 }
 
-/* ===== MENU LATERAL ===== */
+/* Menu lateral */
 nav {
   position: fixed;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 180px;
+  background: rgba(0, 0, 0, 0.7);
+  padding-top: 20px;
 }
 
-nav a {
-  color: #ffd700;
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 20px 0;
+}
+
+nav ul li a {
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #fff;
-  transform: translateX(5px);
-}
-
-/* ===== CONTEÚDO ===== */
-main {
-  padding: 60px 20px;
-  max-width: 850px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* ===== SEÇÕES EM CAIXAS ===== */
-section {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
-
-/* ===== TÍTULOS ===== */
-section h2 {
+nav ul li a:hover {
   color: #ffd700;
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-  text-align: center;
 }
 
-/* ===== TEXTO ===== */
-p, li {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+/* Conteúdo principal */
+main {
+  margin-left: 200px; /* espaço pro menu */
+  padding: 20px;
+}
+
+/* Caixas de texto */
+section {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+h1, h2 {
+  color: #ffd700;
+  margin-bottom: 10px;
 }
