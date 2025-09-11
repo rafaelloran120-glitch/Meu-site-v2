@@ -1,80 +1,71 @@
-/* CSS Profissional com fundo NASA público */
-
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-html, body {
-  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/0/0f/Andromeda_galaxy_2.jpg") no-repeat center center fixed;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sombrero_Galaxy_%28M104%29.jpg/1920px-Sombrero_Galaxy_%28M104%29.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: scroll; /* evita bug de zoom estranho em mobile */
   color: #ffffff;
   line-height: 1.6;
-  padding: 40px 0;
+  min-height: 100vh;
 }
 
-/* overlay pra escurecer um pouco e deixar contraste melhor */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0,0,0,0.45);
   z-index: 0;
 }
 
-/* container para todo conteúdo */
 .container {
   position: relative;
   z-index: 1;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
 }
 
-/* título principal */
 h1 {
   text-align: center;
-  font-size: 3rem;
-  margin-bottom: 30px;
+  font-size: 2.8rem;
+  margin: 40px 20px 30px;
   color: #ffd54f;
   text-shadow: 0px 0px 20px rgba(0,0,0,0.8);
 }
 
-/* nav estilo top simples */
 nav {
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 10px;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 nav a {
   color: #f1f1f1;
   text-decoration: none;
-  font-weight:600;
-  padding:8px 14px;
-  border-radius:8px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
   transition: background 0.3s, transform 0.2s;
 }
 
 nav a:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
 }
 
-/* cartões das seções */
-section.card {
-  background: rgba(0, 0, 0, 0.7);
+section {
+  background: rgba(0,0,0,0.7);
   border-radius: 16px;
   padding: 40px 30px;
   margin: 40px auto;
@@ -82,14 +73,13 @@ section.card {
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-section.card h2 {
+section h2 {
   color: #ffd54f;
-  text-align:center;
-  margin-bottom:20px;
-  font-size:2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-/* listas sem bolinhas */
 ul {
   list-style: none;
   padding: 0;
