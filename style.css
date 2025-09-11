@@ -1,19 +1,25 @@
-/* Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sombrero_Galaxy_%28M104%29.jpg/1920px-Sombrero_Galaxy_%28M104%29.jpg") no-repeat center center fixed;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/0/0f/Andromeda_galaxy_2.jpg") 
+              no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
   line-height: 1.6;
   min-height: 100vh;
 }
 
+/* Overlay escura pra melhorar contraste */
 body::before {
   content: "";
   position: fixed;
@@ -22,6 +28,7 @@ body::before {
   z-index: 0;
 }
 
+/* Container conteúdo */
 .container {
   position: relative;
   z-index: 1;
@@ -30,45 +37,12 @@ body::before {
   padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2.8rem;
-  margin: 40px 20px 30px;
-  color: #ffd54f;
-  text-shadow: 0px 0px 20px rgba(0,0,0,0.8);
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 2;
-}
-
-nav a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-nav a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-3px);
-}
-
+/* Resto das seções */
 section {
   background: rgba(0,0,0,0.7);
   border-radius: 16px;
   padding: 40px 30px;
-  margin: 40px auto;
+  margin: 50px auto;
   max-width: 900px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
@@ -80,6 +54,7 @@ section h2 {
   font-size: 2rem;
 }
 
+/* Listas */
 ul {
   list-style: none;
   padding: 0;
