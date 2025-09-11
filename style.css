@@ -1,32 +1,58 @@
-/* Navbar fixa */
+/* Fundo do site */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: url("https://wallpapers.com/images/hd/4k-space-galaxy-stars-9byr27t5a8q7g3f1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.6;
+}
+
+/* Navbar fixa no topo */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 30, 0.8); /* tom azul escuro translúcido */
   padding: 15px 0;
   text-align: center;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* Links */
+/* Links do menu */
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   margin: 0 20px;
   font-weight: bold;
   transition: 0.3s;
 }
+
 nav a:hover {
   color: #00ffff;
 }
 
-/* Seções */
+/* Seções com fundo levemente escuro */
 section {
-  padding: 120px 20px 80px;  /* 👈 espaço maior em cima pra compensar a navbar */
+  padding: 120px 20px 80px; /* espaço em cima p/ não colar na navbar */
   margin: 40px auto;
   max-width: 800px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Listas com brilho ✨ */
+ul {
+  list-style-type: "✨ ";
+  padding-left: 20px;
 }
