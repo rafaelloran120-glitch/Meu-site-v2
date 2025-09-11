@@ -1,8 +1,32 @@
-body {
-  background: black;
-  color: white;
+/* Navbar fixa */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
 }
 
-h1 {
-  color: yellow;
+/* Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #00ffff;
+}
+
+/* Seções */
+section {
+  padding: 120px 20px 80px;  /* 👈 espaço maior em cima pra compensar a navbar */
+  margin: 40px auto;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
 }
