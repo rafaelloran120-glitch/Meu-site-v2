@@ -1,55 +1,173 @@
-/* Fundo geral do site */
-body {
+/* style.css - versão corrigida (fundo galáxia, nav no topo sem seguir, responsivo) */
+
+/* --- reset rápido --- */
+* {
+  box-sizing: border-box;
+}
+html, body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: url("https://www.solarsystemscope.com/textures/download/2k_stars.jpg") no-repeat center center fixed;
-  background-size: cover;
+  padding: 0;
+}
+
+/* --- efeito de rolagem suave (opcional) --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- fundo do site --- */
+body {
+  min-height: 100vh;
+  font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   color: #f1f1f1;
+  background-color: #000; /* fallback caso a imagem não carregue */
+  background-image: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1950&q=80");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   line-height: 1.6;
 }
 
-/* Navegação no topo */
+/* --- barra de navegação (fica estática no topo, NÃO fixa) --- */
 nav {
-  position: static; /* não vai mais acompanhar */
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 15px 0;
-  text-align: center;
+  background: rgba(2, 12, 30, 0.85);
+  padding: 10px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
+/* centraliza o conteúdo da nav e controla layout */
+nav .nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza os links */
+  gap: 18px;
+}
+
+/* remove marcadores e define layout do menu */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap; /* permite quebrar em 2 linhas em telas MUITO pequenas sem empilhar vertical excessivo */
+}
+
+/* itens do menu */
+nav ul li {
+  margin: 0;
+}
+
+/* estilo dos links do menu */
 nav a {
-  color: #fff;
-  margin: 0 15px;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
 }
 
-nav a:hover {
-  color: #00ffff;
+nav a:hover,
+nav a:focus {
+  background: rgba(255,255,255,0.06);
+  color: #7ffcff;
+  transform: translateY(-1px);
 }
 
-/* Seções */
+/* --- conteúdo das seções --- */
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+/* cada seção com caixa semi-transparente para legibilidade */
 section {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.62);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+  padding: 36px 26px;
+  margin: 26px 0;
+  color: #e9f6fb;
 }
 
-/* Títulos */
-h1, h2 {
+/* título principal e subtítulos */
+h1 {
+  margin: 18px 0;
+  font-size: 2.2rem;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
+  text-shadow: 0 3px 18px rgba(0, 160, 200, 0.06);
 }
 
-/* Ajustar listas */
+h2 {
+  margin: 8px 0 18px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #dffcff;
+}
+
+/* parágrafos e texto */
+p {
+  font-size: 1.05rem;
+  color: #d9eef5;
+  line-height: 1.7;
+  margin: 12px 0;
+  text-align: left;
+}
+
+/* listas: usamos pseudo-elemento pra emoji como marcador (válido e consistente) */
 ul {
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
-li {
+ul li {
+  position: relative;
+  padding-left: 28px;
   margin: 10px 0;
+  font-size: 1.05rem;
+}
+
+/* marcador personalizado */
+ul li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* --- responsividade --- */
+@media (max-width: 700px) {
+  nav .nav-inner {
+    gap: 10px;
+  }
+  nav a {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+  section {
+    padding: 26px 18px;
+    border-radius: 12px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* garante contraste mínimo para seleção de texto */
+::selection {
+  background: rgba(0, 200, 200, 0.15);
 }
