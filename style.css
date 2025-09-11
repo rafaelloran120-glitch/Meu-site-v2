@@ -1,6 +1,7 @@
 /* === Fundo do site 🌌 === */
 body {
-  background: url("https://www.nasa.gov/sites/default/files/thumbnails/image/stsci-h-p2001a-m-2000x1500.png") no-repeat center center fixed;
+  body {
+  background: url("https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") no-repeat center center fixed;
   background-size: cover;
   color: white;
   font-family: Arial, sans-serif;
@@ -8,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 60px; /* espaço pro menu fixo */
+  
 }
 
 /* === Menu de navegação === */
