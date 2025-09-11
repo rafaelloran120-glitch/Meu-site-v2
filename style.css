@@ -1,163 +1,126 @@
-/* ---------- style.css - versão corrigida ---------- */
-
-/* 1) variáveis */
-:root{
-  --nav-width: 220px; /* largura do menu fixo (desktop) */
-  --accent: #ffd54f;
-  --bg-url: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1950&q=80";
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* 2) reset e base */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family: "Segoe UI", Arial, sans-serif;
-  color:#ffffff;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  -webkit-text-size-adjust:100%; /* evita zoom automático */
-  overflow-x:hidden; /* evita scroll horizontal inesperado */
-
-  /* background: imagem + fallback gradiente (se imagem falhar não aparece branco) */
-  background-color:#010114;
-  background-image:
-    linear-gradient(180deg,#000611 0%, #020229 100%),
-    url(var(--bg-url));
-  background-repeat:no-repeat, no-repeat;
-  background-position:center center, center center;
-  background-size:cover, cover;
-  /* NÃO usar background-attachment: fixed (causa bugs em alguns mobiles) */
+html {
+  scroll-behavior: smooth;
 }
 
-/* 3) NAV fixo lateral (desktop) */
-nav{
-  position:fixed;
-  left:0;
-  top:0;
-  width:var(--nav-width);
-  height:100vh;
-  background:rgba(3,3,6,0.92);
-  padding:26px 14px;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  z-index:1000;
-  align-items:flex-start;
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  line-height: 1.6;
+
+  /* Fundo de galáxia escura */
+  background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* logo */
-nav .logo{
-  font-size:26px;
-  margin-bottom:6px;
-  width:100%;
-  text-align:left;
+/* ====== MENU LATERAL (PC) ====== */
+:root {
+  --nav-width: 220px;
 }
 
-/* links do menu */
-nav a{
-  display:block;
-  width:100%;
-  color:#fff;
-  text-decoration:none;
-  padding:12px 10px;
-  border-radius:8px;
-  font-weight:700;
-  font-size:1.05rem;
-  transition: background .18s ease, color .18s ease, transform .12s ease;
-}
-nav a:hover{
-  background:var(--accent);
-  color:#0a0a0a;
-  transform:translateX(4px);
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100%;
+  background: rgba(10, 10, 20, 0.95);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* garante que nav fique acima de tudo */
-nav { box-shadow: 0 6px 20px rgba(0,0,0,0.6) }
-
-/* 4) área de conteúdo principal (sempre deslocada à direita do nav) */
-main{
-  margin-left:var(--nav-width);
-  padding:28px;
-  min-height:100vh;
-  scroll-behavior:smooth;
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700;
 }
 
-/* hero */
-.hero{
-  max-width:980px;
-  margin:10px auto 22px;
-  text-align:center;
-}
-.hero h1{ font-size:1.9rem; margin-bottom:6px; text-shadow: 0 6px 20px rgba(0,0,0,0.6) }
-.hero p{ opacity:0.95 }
-
-/* 5) seções: centralizadas, com fundo sem sobrepor nav */
-section{
-  max-width:920px;
-  margin:28px auto;
-  padding:34px;
-  background:rgba(0,0,0,0.55); /* legível sobre a imagem */
-  border-radius:14px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
-  position:relative;
-  z-index:1; /* menor que nav (nav tem 1000) */
-  scroll-margin-top:28px; /* para rolagem suave não esconder conteúdo (desktop) */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
-/* títulos das seções */
-section h2{
-  color:var(--accent);
-  font-size:1.6rem;
-  margin-bottom:16px;
-  text-align:center;
+nav a:hover {
+  color: #ffd700;
 }
 
-/* listas sem bolinhas (você pediu pra tirar "•") */
-ul{ list-style:none; padding-left:0; margin-top:6px }
-ul li{
-  margin:10px 0;
-  padding:10px 12px;
-  border-radius:8px;
-  background: rgba(255,255,255,0.03);
-  color:#eaeaea;
-  line-height:1.6;
+/* ====== CONTEÚDO PRINCIPAL ====== */
+main {
+  margin-left: var(--nav-width);
+  padding: 40px;
 }
 
-/* 6) responsividade (mobile): nav vira barra superior */
-@media (max-width:800px){
-  :root{ --nav-width: 100%; } /* temporário para layout */
-  nav{
-    width:100%;
-    height:auto;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    padding:10px;
-    flex-direction:row;
-    justify-content:center;
-    gap:8px;
-    align-items:center;
-    z-index:1000;
-  }
-  nav .logo{ display:none }
-  nav a{
-    font-size:0.98rem;
-    padding:8px 10px;
-    border-radius:8px;
+section {
+  margin-bottom: 60px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  max-width: 800px;
+  margin-inline: auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+
+section h2 {
+  color: #ffd700;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* ====== RESPONSIVIDADE (CELULAR) ====== */
+@media (max-width: 800px) {
+  :root {
+    --nav-width: 100%;
   }
 
-  main{
-    margin-left:0; /* não sobra espaço pela largura do topo */
-    padding-top:72px; /* espaço pra nav fixa no topo */
-    padding-left:18px;
-    padding-right:18px;
+  nav {
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 12px;
+    background: rgba(3, 3, 6, 0.95);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
   }
 
-  /* quando o nav vira topo, garantir que rolagem suave não esconda seção */
-  section{ scroll-margin-top:72px }
-}
+  nav .logo {
+    display: none;
+  }
 
-/* 7) ajustes finais visuais */
-h1,h2,h3,p{word-break:break-word}
-a{ -webkit-tap-highlight-color: rgba(0,0,0,0); } /* reduz efeito de seleção mobile */
+  nav a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  main {
+    margin-left: 0;
+    padding-top: 72px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  section {
+    scroll-margin-top: 72px;
+  }
+}
