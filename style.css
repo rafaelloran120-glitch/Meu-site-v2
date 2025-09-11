@@ -11,41 +11,40 @@ body {
   line-height: 1.6;
   color: #ffffff;
 
-  /* 🌌 Fundo da galáxia */
-  background: url("https://cdn.spacetelescope.org/archives/images/screen/heic1509a.jpg") no-repeat center center fixed;
+  /* Fundo do espaço */
+  background: url("https://wallpapers.com/images/hd/space-galaxy-stars-4k-k6h7c2lq7b5m5u6q.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Cabeçalho */
-header {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-  z-index: 10;
-}
-
-header h1 {
-  font-size: 2.5rem;
-}
-
-/* Navegação */
+/* Menu lateral fixo */
 nav {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 0.5rem;
-  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding-top: 20px;
 }
 
 nav a {
+  display: block;
   color: #ffffff;
   text-decoration: none;
-  margin: 0 15px;
+  padding: 15px;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffcc00;
+  background: #ffcc00;
+  color: #000;
+}
+
+/* Conteúdo principal */
+main {
+  margin-left: 200px; /* espaço pro menu */
+  padding: 20px;
 }
 
 /* Seções */
