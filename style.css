@@ -1,67 +1,163 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ---------- style.css - versão corrigida ---------- */
+
+/* 1) variáveis */
+:root{
+  --nav-width: 220px; /* largura do menu fixo (desktop) */
+  --accent: #ffd54f;
+  --bg-url: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1950&q=80";
 }
 
-/* Corpo da página */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #fff;
-  min-height: 100vh;
+/* 2) reset e base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Segoe UI", Arial, sans-serif;
+  color:#ffffff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-text-size-adjust:100%; /* evita zoom automático */
+  overflow-x:hidden; /* evita scroll horizontal inesperado */
 
-  /* Fundo fixo de galáxia */
-  background: url("https://cdn.pixabay.com/photo/2013/07/18/20/26/space-165407_1280.jpg")
-    no-repeat center center fixed;
-  background-size: cover;
+  /* background: imagem + fallback gradiente (se imagem falhar não aparece branco) */
+  background-color:#010114;
+  background-image:
+    linear-gradient(180deg,#000611 0%, #020229 100%),
+    url(var(--bg-url));
+  background-repeat:no-repeat, no-repeat;
+  background-position:center center, center center;
+  background-size:cover, cover;
+  /* NÃO usar background-attachment: fixed (causa bugs em alguns mobiles) */
 }
 
-/* Menu lateral fixo */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  padding-top: 20px;
+/* 3) NAV fixo lateral (desktop) */
+nav{
+  position:fixed;
+  left:0;
+  top:0;
+  width:var(--nav-width);
+  height:100vh;
+  background:rgba(3,3,6,0.92);
+  padding:26px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  z-index:1000;
+  align-items:flex-start;
 }
 
-nav a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 15px;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
+/* logo */
+nav .logo{
+  font-size:26px;
+  margin-bottom:6px;
+  width:100%;
+  text-align:left;
 }
 
-nav a:hover {
-  background: #ffcc00;
-  color: #000;
+/* links do menu */
+nav a{
+  display:block;
+  width:100%;
+  color:#fff;
+  text-decoration:none;
+  padding:12px 10px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:1.05rem;
+  transition: background .18s ease, color .18s ease, transform .12s ease;
+}
+nav a:hover{
+  background:var(--accent);
+  color:#0a0a0a;
+  transform:translateX(4px);
 }
 
-/* Conteúdo */
-main {
-  margin-left: 200px; /* espaço pro menu */
-  padding: 30px;
+/* garante que nav fique acima de tudo */
+nav { box-shadow: 0 6px 20px rgba(0,0,0,0.6) }
+
+/* 4) área de conteúdo principal (sempre deslocada à direita do nav) */
+main{
+  margin-left:var(--nav-width);
+  padding:28px;
+  min-height:100vh;
+  scroll-behavior:smooth;
 }
 
-/* Seções */
-section {
-  background: rgba(0, 0, 0, 0.6);
-  margin-bottom: 40px;
-  padding: 40px;
-  border-radius: 10px;
+/* hero */
+.hero{
+  max-width:980px;
+  margin:10px auto 22px;
+  text-align:center;
+}
+.hero h1{ font-size:1.9rem; margin-bottom:6px; text-shadow: 0 6px 20px rgba(0,0,0,0.6) }
+.hero p{ opacity:0.95 }
+
+/* 5) seções: centralizadas, com fundo sem sobrepor nav */
+section{
+  max-width:920px;
+  margin:28px auto;
+  padding:34px;
+  background:rgba(0,0,0,0.55); /* legível sobre a imagem */
+  border-radius:14px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+  position:relative;
+  z-index:1; /* menor que nav (nav tem 1000) */
+  scroll-margin-top:28px; /* para rolagem suave não esconder conteúdo (desktop) */
 }
 
-/* Títulos */
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
-  display: inline-block;
-  padding-bottom: 5px;
+/* títulos das seções */
+section h2{
+  color:var(--accent);
+  font-size:1.6rem;
+  margin-bottom:16px;
+  text-align:center;
 }
+
+/* listas sem bolinhas (você pediu pra tirar "•") */
+ul{ list-style:none; padding-left:0; margin-top:6px }
+ul li{
+  margin:10px 0;
+  padding:10px 12px;
+  border-radius:8px;
+  background: rgba(255,255,255,0.03);
+  color:#eaeaea;
+  line-height:1.6;
+}
+
+/* 6) responsividade (mobile): nav vira barra superior */
+@media (max-width:800px){
+  :root{ --nav-width: 100%; } /* temporário para layout */
+  nav{
+    width:100%;
+    height:auto;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    padding:10px;
+    flex-direction:row;
+    justify-content:center;
+    gap:8px;
+    align-items:center;
+    z-index:1000;
+  }
+  nav .logo{ display:none }
+  nav a{
+    font-size:0.98rem;
+    padding:8px 10px;
+    border-radius:8px;
+  }
+
+  main{
+    margin-left:0; /* não sobra espaço pela largura do topo */
+    padding-top:72px; /* espaço pra nav fixa no topo */
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  /* quando o nav vira topo, garantir que rolagem suave não esconda seção */
+  section{ scroll-margin-top:72px }
+}
+
+/* 7) ajustes finais visuais */
+h1,h2,h3,p{word-break:break-word}
+a{ -webkit-tap-highlight-color: rgba(0,0,0,0); } /* reduz efeito de seleção mobile */
