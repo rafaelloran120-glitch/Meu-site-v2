@@ -1,4 +1,4 @@
-/* ====== RESET ====== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -12,30 +12,55 @@ html {
 body {
   font-family: Arial, sans-serif;
   color: #fff;
-  line-height: 1.6;
-
-  /* Fundo de galáxia real (4K nítido, sem borrado) */
   background: url("https://cdn.pixabay.com/photo/2018/09/20/20/41/milky-way-3695560_1280.jpg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #000;
+  line-height: 1.6;
 }
 
-/* ====== CONTEÚDO ====== */
+/* ===== MENU LATERAL ===== */
+nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* ===== CONTEÚDO ===== */
 main {
-  padding: 40px 20px;
+  padding: 60px 20px;
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
+/* ===== SEÇÕES EM CAIXAS ===== */
 section {
-  margin-bottom: 60px;
-  padding: 30px;
   background: rgba(0, 0, 0, 0.75);
+  padding: 30px;
   border-radius: 12px;
-  max-width: 800px;
-  margin-inline: auto;
-  box-shadow: 0 0 12px rgba(0,0,0,0.6);
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
 }
 
+/* ===== TÍTULOS ===== */
 section h2 {
   color: #ffd700;
   font-size: 1.8rem;
@@ -43,8 +68,8 @@ section h2 {
   text-align: center;
 }
 
-/* ====== TEXTO ====== */
+/* ===== TEXTO ===== */
 p, li {
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
