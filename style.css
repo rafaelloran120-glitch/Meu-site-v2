@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +8,12 @@
 /* Corpo da página */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-  color: #ffffff;
+  color: #fff;
+  min-height: 100vh;
 
-  /* Fundo do espaço */
-  background: url("https://wallpapers.com/images/hd/space-galaxy-stars-4k-k6h7c2lq7b5m5u6q.jpg") no-repeat center center fixed;
+  /* Fundo fixo de galáxia */
+  background: url("https://cdn.pixabay.com/photo/2013/07/18/20/26/space-165407_1280.jpg")
+    no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -29,11 +30,11 @@ nav {
 
 nav a {
   display: block;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   padding: 15px;
   font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s, color 0.3s;
 }
 
 nav a:hover {
@@ -41,26 +42,25 @@ nav a:hover {
   color: #000;
 }
 
-/* Conteúdo principal */
+/* Conteúdo */
 main {
   margin-left: 200px; /* espaço pro menu */
-  padding: 20px;
+  padding: 30px;
 }
 
 /* Seções */
 section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
   background: rgba(0, 0, 0, 0.6);
+  margin-bottom: 40px;
+  padding: 40px;
   border-radius: 10px;
-  margin-bottom: 30px;
 }
 
 /* Títulos */
 h2 {
-  margin-bottom: 15px;
   font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
   display: inline-block;
   padding-bottom: 5px;
