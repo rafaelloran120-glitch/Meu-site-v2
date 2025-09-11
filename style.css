@@ -14,113 +14,37 @@ body {
   color: #fff;
   line-height: 1.6;
 
-  /* Fundo de galáxia escura */
-  background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg") no-repeat center center fixed;
+  /* Fundo de galáxia real (4K nítido, sem borrado) */
+  background: url("https://cdn.pixabay.com/photo/2018/09/20/20/41/milky-way-3695560_1280.jpg") no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
+  background-color: #000;
 }
 
-/* ====== MENU LATERAL (PC) ====== */
-:root {
-  --nav-width: 220px;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--nav-width);
-  height: 100%;
-  background: rgba(10, 10, 20, 0.95);
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-nav .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ffd700;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-/* ====== CONTEÚDO PRINCIPAL ====== */
+/* ====== CONTEÚDO ====== */
 main {
-  margin-left: var(--nav-width);
-  padding: 40px;
+  padding: 40px 20px;
 }
 
 section {
   margin-bottom: 60px;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   border-radius: 12px;
   max-width: 800px;
   margin-inline: auto;
-  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
 }
 
 section h2 {
   color: #ffd700;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 16px;
   text-align: center;
 }
 
-/* ====== RESPONSIVIDADE (CELULAR) ====== */
-@media (max-width: 800px) {
-  :root {
-    --nav-width: 100%;
-  }
-
-  nav {
-    width: 100%;
-    height: 56px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0 12px;
-    background: rgba(3, 3, 6, 0.95);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    z-index: 1000;
-  }
-
-  nav .logo {
-    display: none;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 6px 10px;
-    border-radius: 6px;
-  }
-
-  main {
-    margin-left: 0;
-    padding-top: 72px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  section {
-    scroll-margin-top: 72px;
-  }
+/* ====== TEXTO ====== */
+p, li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
