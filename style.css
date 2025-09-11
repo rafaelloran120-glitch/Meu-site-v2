@@ -1,58 +1,90 @@
-
+/* === Fundo do site 🌌 === */
 body {
-  background: url("https://i.ibb.co/4P8Y6wq/galaxy.jpg") no-repeat center center fixed;
-  background-size: cover; 
-  color: white; 
-  font-family: Arial, sans-serif; 
-  text-align: center; 
+  background: url("https://www.nasa.gov/sites/default/files/thumbnails/image/stsci-h-p2001a-m-2000x1500.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* espaço pro menu fixo */
+}
+
+/* === Menu de navegação === */
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
 
+nav a {
+  text-decoration: none;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ffff;
+  transition: color 0.3s, text-shadow 0.3s;
+}
 
+nav a:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 8px #ffcc00;
+}
+
+/* === Títulos principais === */
 h1 {
   font-size: 2.8em;
   margin-top: 20px;
-  color: #00ffff; 
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff; 
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-
 h2 {
-  color: #ff00ff; 
+  color: #ff00ff;
   margin-top: 25px;
   text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
 }
 
-
+/* === Texto normal === */
 p {
   font-size: 1.2em;
   line-height: 1.5em;
   margin: 10px auto;
   width: 80%;
-  background: rgba(0, 0, 0, 0.4); 
+  background: rgba(0, 0, 0, 0.4);
   padding: 10px;
   border-radius: 10px;
 }
 
-
+/* === Listas de curiosidades === */
 ul {
-  list-style-type: none; 
+  list-style-type: none;
   padding: 0;
 }
 
 li {
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(0, 0, 0, 0.6);
   margin: 8px auto;
   padding: 10px;
   border-radius: 10px;
   width: 80%;
-  box-shadow: 0 0 10px #ffffff44; 
+  box-shadow: 0 0 10px #ffffff44;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
+/* Efeito hover nas curiosidades */
 li:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff; 
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
 }
